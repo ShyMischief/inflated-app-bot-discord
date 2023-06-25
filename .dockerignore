@@ -7,3 +7,4 @@ README.md
 .gitignore
 .dockerignore
 Dockerfile
+register.bat
