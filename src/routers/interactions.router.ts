@@ -14,6 +14,11 @@ router.post('/', verifyInteraction(process.env.DISCORD_PUBLIC_KEY!), async (req,
     // Ping interactions
     if (type === 1) return res.status(200).json({ type: 1 });
 
+    // Autocomplete interactions
+    if (type === 3) {
+        console.log('Autocomplete interaction received', JSON.stringify(data, null, 2));
+    }
+
     // search for the interaction handler
     const handlerPath = path.join(__dirname, '..', 'interactions', `${data.name}.js`);
 
